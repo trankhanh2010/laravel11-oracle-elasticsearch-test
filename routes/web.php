@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Api\CacheControllers\ElasticSearchController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +16,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/hi', function () {
     return 'hi';
 });
+Route::get("area", [ElasticSearchController::class, "area"]);

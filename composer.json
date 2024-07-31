@@ -9,9 +9,12 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "elasticsearch/elasticsearch": "^7.17",
         "guzzlehttp/guzzle": "^7.0.1",
+        "jeroen-g/explorer": "^3.14",
         "laravel/framework": "^11.0",
         "laravel/sanctum": "^4.0",
+        "laravel/scout": "^10.10",
         "laravel/tinker": "^2.0",
         "predis/predis": "^2.2",
         "yajra/laravel-oci8": "^11.0"

@@ -106,6 +106,7 @@ use App\Http\Controllers\Api\ValidateControllers\CheckRefectoryController;
 use App\Http\Controllers\Api\ValidateControllers\CheckSpecialityController;
 use App\Http\Controllers\Api\ValidateControllers\CheckServiceController;
 use App\Http\Controllers\Api\ValidateControllers\CheckTreatmentTypeController;
+use App\Http\Controllers\Api\CacheControllers\ElasticSearchController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -116,12 +117,19 @@ use App\Http\Controllers\Api\ValidateControllers\CheckTreatmentTypeController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+Route::get("test-elasticsearch", [ElasticSearchController::class, "index"]);
+Route::get("area", [ElasticSearchController::class, "area"]);
+Route::get("service/{key}", [ElasticSearchController::class, "service"]);
+
+
 Route::fallback(function(){
     return return_404_error_page_not_found();
 });
 Route::group([
     "middleware" => ["check_module:api"]
 ], function () {
+
+
 
     /// Khoa phòng
     Route::group(['as' => 'HIS.Desktop.Plugins.HisDepartment'], function () {
